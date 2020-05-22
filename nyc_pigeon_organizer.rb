@@ -34,7 +34,15 @@ def nyc_pigeon_organizer(data)
         end
       end
     end
-  
+    
+    # map living info into new hash
+    data[:lives].each do |key, value|
+      value.each do |name| # iterating over names in og color data
+        if org_name == name
+          organized_pigeon[org_name][:lives] << "#{key}"
+        end
+      end
+    end
   end
   
   
