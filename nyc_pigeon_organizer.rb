@@ -14,7 +14,8 @@ def nyc_pigeon_organizer(data)
   end
   
   # map color info into new hash
-  
+  organized_pigeon.map do |key, value|
+  end
   binding.pry
   organized_pigeon
 end
