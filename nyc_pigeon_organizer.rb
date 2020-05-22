@@ -30,9 +30,11 @@ def nyc_pigeon_organizer(data)
     data[:gender].each do |key, value|
       value.each do |name| # iterating over names in og color data
         if org_name == name
-          organized_pigeon[org_name][:color] << "#{key}"
+          organized_pigeon[org_name][:gender] << "#{key}"
         end
+      end
     end
+  
   end
   
   binding.pry
