@@ -14,8 +14,18 @@ def nyc_pigeon_organizer(data)
   end
   
   # map color info into new hash
-  organized_pigeon.map do |key, value|
+  organized_pigeon.collect do |org_name, org_value| # iterating through each pigeon name
+  
+    data[:color].each do |key, value| # iterating over original color data
+    
+      value.each do |name| # iterating over names in og color data
+        if org_name == name
+          organized_pigeon[org_name][:color] << "#{key}"
+        end
+      end
+    end
   end
+  
   binding.pry
   organized_pigeon
 end
