@@ -13,9 +13,10 @@ def nyc_pigeon_organizer(data)
     organized_pigeon[name] = {color: [], gender: [], lives: []}
   end
   
-  # map color info into new hash
+  
   organized_pigeon.collect do |org_name, org_value| # iterating through each pigeon name
   
+    # map color info into new hash
     data[:color].each do |key, value| # iterating over original color data
     
       value.each do |name| # iterating over names in og color data
@@ -23,6 +24,14 @@ def nyc_pigeon_organizer(data)
           organized_pigeon[org_name][:color] << "#{key}"
         end
       end
+    end
+    
+    # map gender info into new hash
+    data[:gender].each do |key, value|
+      value.each do |name| # iterating over names in og color data
+        if org_name == name
+          organized_pigeon[org_name][:color] << "#{key}"
+        end
     end
   end
   
